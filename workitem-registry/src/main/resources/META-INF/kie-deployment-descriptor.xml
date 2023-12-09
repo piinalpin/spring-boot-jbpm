@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deployment-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="">
+
+    <runtime-strategy>PER_PROCESS_INSTANCE</runtime-strategy>
+    <work-item-handlers>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new com.piinalpin.rnd.workitemservice.handler.FirstWorkItemHandler()</identifier>
+            <parameters/>
+            <name>FirstWorkItemHandler</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new com.piinalpin.rnd.workitemservice.handler.SecondWorkItemHandler()</identifier>
+            <parameters/>
+            <name>SecondWorkItemHandler</name>
+        </work-item-handler>
+    </work-item-handlers>
+
+</deployment-descriptor>
