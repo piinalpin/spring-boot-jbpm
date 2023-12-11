@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.piinalpin.rnd</groupId>
+	<artifactId>workitem-registry</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>${project.artifactId}</name>
+	<description>Demo project for Spring Boot</description>
+	<packaging>kjar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-api</artifactId>
+			<version>7.73.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-internal</artifactId>
+			<version>7.73.0.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+	<distributionManagement>
+    	<repository>
+			<id>jbpm-workbench-repo</id>
+			<name>JBPM Workbench Repo</name>
+			<url>http://localhost:8080/business-central/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+                <groupId>org.kie</groupId>
+				<artifactId>kie-maven-plugin</artifactId>
+				<version>7.73.0.Final</version>
+				<extensions>true</extensions>
+            </plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,14 @@
+[
+    [
+        "name" : "FirstWorkItemHandler",  
+        "displayName" : "Validate First Work Item", 
+        "category" : "General",
+        "icon" : "defaultservicenodeicon.png",
+    ],
+    [
+        "name" : "SecondWorkItemHandler",  
+        "displayName" : "Process Second Work Item", 
+        "category" : "General",
+        "icon" : "defaultservicenodeicon.png",
+    ],
+]

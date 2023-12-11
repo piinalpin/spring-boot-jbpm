@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "deca6bd5-42b6-4d68-96ea-4e991045c75a",
+		"name": "jBPM Spring Boot Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18837117"
+	},
+	"item": [
+		{
+			"name": "Test Workflow",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/api/workflow/process/hello/execute",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"workflow",
+						"process",
+						"hello",
+						"execute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Financing Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"TEST\",\r\n    \"amount\": 28300000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/financing/save",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"financing",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transaction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"TEST\",\r\n    \"amount\": 28300000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/transaction/history",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"transaction",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionDate\": \"2023-12-11T15:33:38.903205\",\r\n    \"transactionAmount\": 67000000,\r\n    \"status\": \"SUCCESS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/transaction/save",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"transaction",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	]
+}

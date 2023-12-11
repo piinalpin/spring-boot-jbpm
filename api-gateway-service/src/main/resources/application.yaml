@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: workflow-service
+          uri: ${workflow-service.host}
+          predicates:
+            - Path=/api/workflow/**
+          filters:
+            - RewritePath=/api/workflow/(?<segment>.*), /api/workflow-service/$\{segment}
+            - name: CircuitBreaker
+              args:
+                name: circuitBreaker
+                fallbackUri: forward:/fallback
+        - id: financing-service
+          uri: ${financing-service.host}
+          predicates:
+            - Path=/api/financing/**
+          filters:
+            - RewritePath=/api/financing/(?<segment>.*), /api/financing-service/$\{segment}
+            - name: CircuitBreaker
+              args:
+                name: circuitBreaker
+                fallbackUri: forward:/fallback
+        - id: transaction-service
+          uri: ${transaction-service.host}
+          predicates:
+            - Path=/api/transaction/**
+          filters:
+            - RewritePath=/api/transaction/(?<segment>.*), /api/transaction-service/$\{segment}
+            - name: CircuitBreaker
+              args:
+                name: circuitBreaker
+                fallbackUri: forward:/fallback

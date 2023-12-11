@@ -1,0 +1,60 @@
+version: '3'
+
+services:
+  jbpm-server:
+    image: jboss/jbpm-server-full:7.61.0.Final
+    container_name: jbpm-server
+    ports:
+      - '8080:8080'
+    volumes:
+      - .\m2:/opt/jboss/.m2
+    networks:
+      - local.network
+  
+  api-gateway:
+    image: api-gateway-service
+    container_name: api-gateway-service
+    build:
+      context: api-gateway-service
+    ports:
+      - '8081:8080'
+    env_file:
+      - .env
+    networks:
+      - local.network
+  
+  financing-service:
+    image: financing-service
+    container_name: financing-service
+    build:
+      context: financing-service
+    env_file:
+      - .env
+    networks:
+      - local.network
+  
+  transaction-service:
+    image: transaction-service
+    container_name: transaction-service
+    build:
+      context: transaction-service
+    env_file:
+      - .env
+    networks:
+      - local.network
+
+  workitem-service:
+    image: workitem-service
+    container_name: workitem-service
+    build:
+      context: workitem-service
+    volumes:
+      - .\m2:/root/.m2
+    env_file:
+      - .env
+    networks:
+      - local.network
+
+networks:
+  local.network:
+    external: true
