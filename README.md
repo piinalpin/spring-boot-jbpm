@@ -15,9 +15,8 @@ mvn clean package && mvn deploy --settings=settings.xml
 ```
 
 Add deployment unit `kJAR` to kie server on this example using `workflow-service`
-<p align="left">
-    <img src="./images/add-deployment-unit.png" alt="Add deployment unit" style="max-width:200px;">
-</p>
+
+![Add deployment unit](./images/add-deployment-unit.png)
 
 To stop use `docker compose`
 ```bash
