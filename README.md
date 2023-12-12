@@ -1,6 +1,10 @@
 # jBPM Spring Boot Microservices Integration
 How to integrate Spring Boot microservices with jBPM and implements containerized architecture
 
+## Containerized Architecture
+This sample will use persistence volume to sharing volume between `jBPM server` and `workitem-service`
+
+![Containerized Architecture](./images/containerized-architecture.jpg)
 
 ## How to Run?
 
