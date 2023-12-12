@@ -38,3 +38,6 @@ docker rmi workitem-service
 ## API Documentation
 
 Can use my postman collection [here.](https://github.com/piinalpin/spring-boot-jbpm/blob/microservices/jBPM%20Spring%20Boot%20Microservices.postman_collection.json)
+
+#### Development Kubernetes Cluster
+![Kubernetes Cluster](./images/kubernetes-cluster.jpeg)
