@@ -2,7 +2,7 @@ version: '3'
 
 services:
   jbpm-server:
-    image: jboss/jbpm-server-full:7.61.0.Final
+    image: quay.io/kiegroup/jbpm-server-full:7.74.0.Final
     container_name: jbpm-server
     ports:
       - '8080:8080'
